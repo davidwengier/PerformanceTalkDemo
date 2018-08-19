@@ -1,4 +1,6 @@
-﻿namespace PerformanceTalkDemo
+﻿using BenchmarkDotNet.Running;
+
+namespace PerformanceTalkDemo
 {
     internal class Program
     {
