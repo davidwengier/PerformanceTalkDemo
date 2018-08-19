@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace PerformanceTalkDemo
 {
+    [MemoryDiagnoser]
     public class Program
     {
         public static void Main(string[] args)
@@ -13,7 +14,7 @@ namespace PerformanceTalkDemo
 
         private string[] _data = new string[] { "the", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "dog" };
 
-        [Benchmark]
+        [Benchmark(Baseline = true)]
         public string Aggregate()
         {
             return _data.Aggregate(string.Empty, (c, n) => c + n + ",");
